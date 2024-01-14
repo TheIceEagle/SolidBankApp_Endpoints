@@ -56,16 +56,30 @@ public class SolidBankApplication  implements CommandLineRunner {
 	}
 
 	private static void printManual() {
-		try {
-			File read_file = new File("src/main/resources/manual.txt");
-			Scanner scanner = new Scanner(read_file);
-			while (scanner.hasNextLine()) {
-				System.out.println(scanner.nextLine());
-			}
-			scanner.close();
-		} catch (FileNotFoundException e) {
-			throw new RuntimeException(e);
-		}
+//		try {
+//			File read_file = new File("src/main/resources/manual.txt");
+//			//check if file exists and path is correct
+//			if (!read_file.exists()) {
+//				System.out.println("File does not exist.");
+//				return;
+//			}
+//			Scanner scanner = new Scanner(read_file);
+//			while (scanner.hasNextLine()) {
+//				System.out.println(scanner.nextLine());
+//			}
+//			scanner.close();
+//		} catch (FileNotFoundException e) {
+//			throw new RuntimeException(e);
+//		}
+		String manual = "Welcome to CLI bank serviceEnter operation number:\n" +
+				"1 - show accounts\n" +
+				"2 - create account\n" +
+				"3 - deposit\n" +
+				"4 - withdraw\n" +
+				"5 - transfer\n" +
+				"6 - this message\n" +
+				"7 - exit";
+		System.out.println(manual);
 	}
 	public static void exit() {
 		System.out.println("Application Closed");
